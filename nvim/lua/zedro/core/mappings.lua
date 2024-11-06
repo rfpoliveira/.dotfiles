@@ -1,12 +1,12 @@
 local keymap = vim.keymap -- for conciseness
 
 -- General Mappings --
-keymap.set(({ "n", "v" }), "<Space>", "<Nop>", { silent = true })
+-- keymap.set(({ "n", "v" }), "<Space>", "<Nop>", { silent = true })
 keymap.set("n", "gx", ":!open <c-r><c-a><CR>") -- open URL under cursor
 
 -- Get Help
 keymap.set("n", "<leader>h", ":vertical help ", { desc = "Get Help on..." })
-keymap.set("n", "<leadeo", ":vert options<CR>", { desc = "Open Options in a vertical split" })
+keymap.set("n", "<leader>o", ":vert options<CR>", { desc = "Open Options in a vertical split" })
 keymap.set("n", "<leader>mas", ":Man ascii<CR>", { desc = "Get ASCII Man Page" })
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
