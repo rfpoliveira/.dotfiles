@@ -117,27 +117,18 @@ if [[ $USER == "rpedrosa" ]]; then
 	alias ga='git add .'
 	alias gcm='git commit -m 00'
 	alias gp='git push'
-elif [[ $USER == "zedr0" ]]; then
+elif [[ $USER == "renato-oliveira" ]]; then
+	alias mini='~/mini-moulinette/mini-moul.sh'
+	alias cl='clear'
+	alias gdbgo='gdb --tui a.out'
+	alias rma='rm a.out'
+	alias mvft='mv ft_*.c cfiles'
+	alias nor='norminette -R checkForbiddenSourceHeader'
+	alias ccf='cc -Wall -Werror -Wextra -g'
+	alias wig='git ls-tree --full-tree -r --name-only HEAD'
+	alias v='nvim'
+	alias ga='git add .'
+	alias gcm='git commit -m 00'
+	alias gp='git push'
 fi
 
-# Load Homebrew config script
-source $HOME/.brewconfig.zsh
-
-if ! systemctl status docker | grep running &> /dev/null; then
-		echo "[Francinette] Starting Docker..."
-		sleep 1
-		exec "/bin/zsh"
-fi
-if ! docker image ls | grep francinette-image &> /dev/null; then
-		echo "[Francinette] Loading the docker container"
-		docker load < /home/rpedrosa/francinette-image/francinette.tar
-		exec "/bin/zsh"
-fi
-if ! docker ps | grep "francinette-image" &> /dev/null; then
-	if docker run -d -i -v /home:/home -v /goinfre:/goinfre -v /sgoinfre:/sgoinfre -v /home/rpedrosa/francinette-image/logs:/francinette/logs-t --name run-paco francinette-image /bin/bash 2>&1 | grep "already" &> /dev/null; then
-		docker start run-paco
-	fi
-fi
-alias francinette=/home/rpedrosa/francinette/francinette-image/run.sh
-
-alias paco=/home/rpedrosa/francinette/francinette-image/run.sh
