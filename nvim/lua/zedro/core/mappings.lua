@@ -1,12 +1,12 @@
 local keymap = vim.keymap -- for conciseness
 
 -- General Mappings --
--- keymap.set(({ "n", "v" }), "<Space>", "<Nop>", { silent = true })
+keymap.set(({ "n", "v" }), "<Space>", "<Nop>", { silent = true })
 keymap.set("n", "gx", ":!open <c-r><c-a><CR>") -- open URL under cursor
 
 -- Get Help
 keymap.set("n", "<leader>h", ":vertical help ", { desc = "Get Help on..." })
-keymap.set("n", "<leader>o", ":vert options<CR>", { desc = "Open Options in a vertical split" })
+keymap.set("n", "<leadeo", ":vert options<CR>", { desc = "Open Options in a vertical split" })
 keymap.set("n", "<leader>mas", ":Man ascii<CR>", { desc = "Get ASCII Man Page" })
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
@@ -237,9 +237,9 @@ keymap.set("n", "<leader>pl",
   { desc = "Parrot Party!!!" }
 )
 -- Summon Pet
-keymap.set("n", "<leader>sp", ":PetsNew Z", { desc = "Summon Pet" })
-keymap.set("n", "<leader>scp", ":PetsNewCustom slime green Z", { desc = "Summon Custom Pet" })
-keymap.set("n", "<leader>kp", ":PetsKill Z", { desc = "Kill Pet" })
+-- keymap.set("n", "<leader>sp", ":PetsNew Z", { desc = "Summon Pet" })
+-- keymap.set("n", "<leader>scp", ":PetsNewCustom slime green Z", { desc = "Summon Custom Pet" })
+-- keymap.set("n", "<leader>kp", ":PetsKill Z", { desc = "Kill Pet" })
 
 -- Hardtime
 local function toggle_hardmode()
@@ -247,3 +247,8 @@ local function toggle_hardmode()
   require("precognition").toggle()
 end
 keymap.set("n", "<leader>ht", toggle_hardmode, { desc = "Toggle Hardmode" })
+
+vim.keymap.set('n', '<leader>;', function()
+    require('zedro.funkz.commenter').add_boxed_comment()
+end, { desc = "Create Separator" })
+

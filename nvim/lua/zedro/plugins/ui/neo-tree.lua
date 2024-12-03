@@ -134,14 +134,14 @@ return {
       },
       file_size = {
         enabled = true,
-        required_width = 30, -- min width of window required to show this column
+        required_width = 10, -- min width of window required to show this column
       },
       last_modified = {
-        enabled = true,
+        enabled = false,
         required_width = 60, -- min width of window required to show this column
       },
       created = {
-        enabled = true,
+        enabled = false,
         required_width = 80, -- min width of window required to show this column
       },
       symlink_target = {
@@ -354,7 +354,6 @@ return {
     local keymap = vim.keymap
     keymap.set('n', '\\', ":Neotree reveal<cr>", { desc = "Open NeoTree" })
     keymap.set("n", "<leader>e", ":Neotree toggle<cr>", { desc = "Toggle NeoTree " })
-    keymap.set("n", "<leader>n", ":Neotree reveal<cr>", { desc = "Toggle NeoTree " })
     keymap.set("n", "<leader>gn", ":Neotree float git_status git_base=main<cr>", { desc = "Get Git Status NeoTree" })
     keymap.set("n", "<leader>tds", ":Neotree document_symbols<cr>", { desc = "Get Document Symbols NeoTree" })
   end
