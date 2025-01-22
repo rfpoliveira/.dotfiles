@@ -64,17 +64,12 @@ alias zshcow=~/.dotfiles/scripts/zsh/cowsay-fortune.sh
 
 greet $HOST
 
-################
-### Keyboard ###
-################
-
-eval "setxkbmap us"
-
 #######################
 ### rpedrosa's Aliases ###
 #######################
 
 if [[ $USER == "rpedrosa" ]]; then
+	eval "setxkbmap us"
 	alias mini='~/mini-moulinette/mini-moul.sh'
 	alias cl='clear'
 	alias gdbgo='gdb --tui a.out'
@@ -88,7 +83,21 @@ if [[ $USER == "rpedrosa" ]]; then
 	alias gcm='git commit -m 00'
 	alias gp='git push'
 	alias fancygrind='valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes'
-# elif [[ $USER == "rpedrosa" ]]; then
+elif [[ $USER == "renato-oliveira" ]]; then
+  eval "setxkbmap pt"
+	alias mini='~/mini-moulinette/mini-moul.sh'
+	alias cl='clear'
+	alias gdbgo='gdb --tui a.out'
+	alias rma='rm a.out'
+	alias mvft='mv ft_*.c cfiles'
+	alias nor='norminette -R checkForbiddenSourceHeader'
+	alias ccf='cc -Wall -Werror -Wextra -g'
+	alias wig='git ls-tree --full-tree -r --name-only HEAD'
+	alias v='nvim'
+	alias ga='git add .'
+	alias gcm='git commit -m 00'
+	alias gp='git push'
+	alias fancygrind='valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes'
 fi
 
 export PATH=$HOME/neovim/bin:$PATH
