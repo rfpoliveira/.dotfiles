@@ -1,3 +1,10 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
 [user]
-	email = rfpoliveira18@gmail.com
-	name = rfpoliveira
+	name = rfpoliveira 
+	email = rfpoliveira18@gmail.com 
+[core]
+	editor = nvim
+[diff]
+	submodule = log
